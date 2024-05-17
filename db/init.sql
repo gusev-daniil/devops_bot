@@ -1,0 +1,17 @@
+SELECT 'CREATE DATABASE %DBNAME%'
+WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = '%DBNAME%')\gexec
+
+CREATE USER %DB_REPL_USER% WITH REPLICATION ENCRYPTED PASSWORD '%REPLUSER_PASSWORD%';
+
+select pg_create_physical_replication_slot('replication_slot');
+
+CREATE TABLE IF NOT EXISTS phone(
+    id SERIAL PRIMARY KEY,
+    phone_number VARCHAR(20)
+);
+
+CREATE TABLE IF NOT EXISTS email(
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255)
+);
+
