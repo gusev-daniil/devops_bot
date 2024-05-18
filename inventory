@@ -1,0 +1,3 @@
+db_host ansible_host="{{DB_HOST}}" ansible_user="{{ DB_USER }}" ansible_password="{{ DB_PASSWORD }}" ansible_sudo_pass="{{ DB_PASSWORD }}"
+db_repl ansible_host="{{DB_REPL_HOST}}" ansible_user="{{ DB_REPL_USER }}" ansible_password="{{ DB_REPL_PASSWORD }}" ansible_sudo_pass="{{ DB_REPL_PASSWORD }}"
+bot_host ansible_host="{{RM_HOST}}" ansible_user="{{ RM_USER }}" ansible_password="{{ RM_PASSWORD }}" ansible_sudo_pass="{{ RM_PASSWORD }}"
